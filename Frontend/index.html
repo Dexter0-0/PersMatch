@@ -49,8 +49,27 @@
     <script src = "script.js"></script>
 
     
-    <h1>Bruh Momento</h1>
+    <!-- Login Form -->
+    <div class = "container LoginCard">
+        <form action = "/action_page.php" method = "post">
+            <div class = "row">
+                <img src = "Images/Icon.png" id = "Logo" height= "125" width = "125">
+            </div>
 
+            <div class = "row">
+                <input type = "text" placeholder = "Introdu numele de utilizator" name = "Username" required>
 
+                <input type = "password" placeholder = "Introdu Parola" name = "Password" required>
+            
+                <button type = "submit" id = "LoginButton">Logheaza-te</button>
+            </div>
+            
+            <div class = "row">
+                <span id = "ForgotPassword">
+                    <a href = "#">Ai uitat parola?</a>
+                </span>
+            </div>
+        </form>
+    </div>
 
 </html>
