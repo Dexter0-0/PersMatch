@@ -4,10 +4,10 @@ import spotipy
 
 ###############################################################
 
-def GetMusicTaste():
+def GetMusicTaste(Username):
+    # Username = "c6npu7845jgtvuo2864jxzpup" (Username-ul meu pt testing daca iti trb)
     Genres = ""
     Scope = "user-top-read"
-    Username = "c6npu7845jgtvuo2864jxzpup"
     ClientID = 'f33ea24085634624b58c3622dedf563c'
     ClientSecret = 'af327494a245416baeb06580cf584350'
     RedirectURL = 'https://dexter0-0.github.io/'
