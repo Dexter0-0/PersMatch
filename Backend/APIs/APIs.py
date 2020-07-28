@@ -1,4 +1,5 @@
 from collections import Counter
+from imdb import IMDb as MovieAPI
 import spotipy.util as util
 import spotipy
 
@@ -41,15 +42,27 @@ def GetMusicCompatibility(SpotifyUserOne, SpotifyUserTwo):
             if GenresOne[i] == GenresTwo[j]:
                 MusicScore = MusicScore + 1
 
+    MusicScore = MusicScore / max(len(GenresOne), len(GenresTwo))
     return MusicScore
 
 ###############################################################
 
-def main():
-    SpotifyUserOne = GetUserToken("Dexter", "")
-    SpotifyUserTwo = GetUserToken("Tudor", "")
+def GetMovieCompatibility(MoviesUserOne, MoviesUserTwo):
+    for i in range(len(MoviesUserOne)):
+        MovieID = MovieAPI().search_movie(MoviesUserOne[i])[0]
+        print(MovieID)
 
-    print(GetMusicCompatibility(SpotifyUserOne, SpotifyUserTwo))
+    for i in range(len(MoviesUserTwo)):
+        Movie = MovieAPI().search_movie(MoviesUserTwo[i])[0]
+        print(Movie)
+
+###############################################################
+
+def main():
+    print(GetMusicCompatibility(GetUserToken("Dexter", ""), GetUserToken("Tudor", "")))
+    MoviesUserOne = ["titanic", "the wizard of oz", "star wars 4", "the lion king", "the godfather"]
+    MoviesUserTwo = ["jurassic park", "the dark knight", "jaws", "fight club", "pulp fiction"]
+    GetMovieCompatibility(MoviesUserOne, MoviesUserTwo)
 
 
 if __name__ == '__main__':
