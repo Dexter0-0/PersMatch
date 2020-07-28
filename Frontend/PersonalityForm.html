@@ -90,7 +90,37 @@
     <div class = "container PersonalityForm">
         <form action = "/action_page.php" method = "post">
             <div class = "row">
-                <h3>Ce personalitate ai? (vezi: <a target="_blank" rel="noopener noreferrer" href = "https://www.16personalities.com/ro/test-de-personalitate-gratuit">cele 16 personalitati</a>)</h3>
+                <h3>Ce varsta ai?</h3>
+                <input type = "number" placeholder = "Varsta" name = "Age" id = "PersonalityTextInput" required>
+
+                <h3 id = "InputLabel">Categoria de varsta a unui posibil partener</h3>
+                <select id = "PersonalityInput" name = "AgeCategory">
+                    <option value = "18-25">18-25</option>
+                    <option value = "25-30">25-30</option>
+                    <option value = "30-35">30-35</option>
+                    <option value = "35-45">35-45</option>
+                    <option value = "45-55">45-55</option>
+                    <option value = "60+">60+</option>
+                </select>
+
+                <h3 id = "InputLabel">Drept ce te identifici?</h3>
+                <select id = "PersonalityInput" name = "Gender">
+                    <option value = "Male">Male</option>
+                    <option value = "Female">Female</option>
+                    <option value = "Other">Other</option>
+                </select>
+
+                <h3 id = "InputLabel">Genderul unui posibil partener</h3>
+                <select id = "PersonalityInput" name = "GenderCategory">
+                    <option value = "Male">Male</option>
+                    <option value = "Female">Female</option>
+                    <option value = "Both">Both</option>
+                    <option value = "Other">Other</option>
+                </select>
+            </div>
+            
+            <div class = "row">
+                <h3 id = "InputLabel">Ce personalitate ai? (vezi: <a target="_blank" rel="noopener noreferrer" href = "https://www.16personalities.com/ro/test-de-personalitate-gratuit">cele 16 personalitati</a>)</h3>
 
                 <select id = "PersonalityInput" name = "Personality">
                     <option value = "INTJ">INTJ</option>
@@ -119,7 +149,7 @@
                 <h3 id = "InputLabel">Care este username-ul tau de Instagram?</h3>
                 <input type = "text" placeholder = "Username Instagram" name = "SpotifyLink" id = "PersonalityTextInput" required>
 
-                <h3 id = "InputLabel">Introdu 5 filme si seriale care iti plac (unul pe linie)</h3>
+                <h3 id = "InputLabel">Introdu 3 filme si seriale care iti plac (unul pe linie)</h3>
                 <textarea name = "FilmeSeriale" cols = "40" rows = "5" id = "PersonalityTextInput" required></textarea>
 
                 <h3 id = "InputLabel">Introdu 3 hobby-uri si activitati pe care le practici in timpul liber (unul pe linie)</h3>
