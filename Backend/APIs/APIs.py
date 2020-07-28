@@ -48,21 +48,42 @@ def GetMusicCompatibility(SpotifyUserOne, SpotifyUserTwo):
 ###############################################################
 
 def GetMovieCompatibility(MoviesUserOne, MoviesUserTwo):
+    MovieScore = 0
+    GenresOne = ""
+    GenresTwo = ""
+
     for i in range(len(MoviesUserOne)):
-        MovieID = MovieAPI().search_movie(MoviesUserOne[i])[0]
-        print(MovieID)
+        MovieID = MovieAPI().search_movie(MoviesUserOne[i])[0].movieID
+        GenresMovie = MovieAPI().get_movie(MovieID)["genres"]
+        for j in range(len(GenresMovie)):
+            GenresOne = GenresOne + GenresMovie[j] + ","
 
     for i in range(len(MoviesUserTwo)):
-        Movie = MovieAPI().search_movie(MoviesUserTwo[i])[0]
-        print(Movie)
+        MovieID = MovieAPI().search_movie(MoviesUserTwo[i])[0].movieID
+        GenresMovie = MovieAPI().get_movie(MovieID)["genres"]
+        for j in range(len(GenresMovie)):
+            GenresTwo = GenresTwo + GenresMovie[j] + ","
+
+    GenresOne = GenresOne.split(",")
+    GenresTwo = GenresTwo.split(",")
+
+    for i in range(len(GenresOne)):
+        for j in range(len(GenresTwo)):
+            if GenresOne[i] == GenresTwo[j]:
+                MovieScore = MovieScore + 1
+
+    MovieScore = MovieScore / max(len(GenresOne), len(GenresTwo))
+    return MovieScore
 
 ###############################################################
 
 def main():
     print(GetMusicCompatibility(GetUserToken("Dexter", ""), GetUserToken("Tudor", "")))
-    MoviesUserOne = ["titanic", "the wizard of oz", "star wars 4", "the lion king", "the godfather"]
-    MoviesUserTwo = ["jurassic park", "the dark knight", "jaws", "fight club", "pulp fiction"]
-    GetMovieCompatibility(MoviesUserOne, MoviesUserTwo)
+
+    MoviesUserOne = ["titanic", "the wizard of oz", "the lion king"]
+    MoviesUserTwo = ["jurassic park", "fight club", "pulp fiction"]
+
+    print(GetMovieCompatibility(MoviesUserOne, MoviesUserTwo))
 
 
 if __name__ == '__main__':
