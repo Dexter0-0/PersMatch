@@ -90,10 +90,8 @@
     <div class = "container PersonalityForm">
         <form action = "/action_page.php" method = "post">
             <div class = "row">
-                <h3>Care este tipul tau de personalitate? (vezi: <a target="_blank" rel="noopener noreferrer" href = "https://www.16personalities.com/ro/test-de-personalitate-gratuit">cele 16 personalitati</a>)</h3>
-            </div>
+                <h3>Ce personalitate ai? (vezi: <a target="_blank" rel="noopener noreferrer" href = "https://www.16personalities.com/ro/test-de-personalitate-gratuit">cele 16 personalitati</a>)</h3>
 
-            <div class = "row">
                 <select id = "PersonalityInput" name = "Personality">
                     <option value = "INTJ">INTJ</option>
                     <option value = "INTP">INTP</option>
@@ -112,16 +110,26 @@
                     <option value = "ESTP">ENTJ</option>
                     <option value = "ESFP">ENTP</option>
                 </select>
-
             </div>
             
-            
             <div class = "row">
-                <input type = "text" placeholder = "Ce tip de personalitate ai?" name = "Username" required>
+                <h3 id = "InputLabel">Care este username-ul tau de Spotify? (vezi: <a target="_blank" rel="noopener noreferrer" href = "https://www.businessinsider.com/how-to-find-spotify-username">cum sa gasesti username-ul</a>)</h3>
+                <input type = "text" placeholder = "Username Spotify" name = "Username" id = "PersonalityTextInput" required>
 
-                <input type = "password" placeholder = "Introdu Parola" name = "Password" required>
-            
-                <button type = "submit" id = "LoginButton">Trimite informatile</button>
+                <h3 id = "InputLabel">Care este username-ul tau de Instagram?</h3>
+                <input type = "text" placeholder = "Username Instagram" name = "Username" id = "PersonalityTextInput" required>
+
+                <h3 id = "InputLabel">Introdu 5 filme si seriale care iti plac (unul pe linie)</h3>
+                <textarea name = "FilmeSeriale" cols = "40" rows = "5" id = "PersonalityTextInput" required></textarea>
+
+                <h3 id = "InputLabel">Introdu 3 hobby-uri si activitati pe care le practici in timpul liber (unul pe linie)</h3>
+                <textarea name = "Hobby" cols = "40" rows = "3" id = "PersonalityTextInput" required></textarea>
+                
+                <h3 id = "InputLabel">Incarca o poza pentru profil</h3>
+                <input type = "file" name = "Photo" id = "PhotoUpload" required>
+
+
+                <button type = "submit" id = "SendInfoButton">Trimite informatile</button>
             </div>
         </form>
     </div>

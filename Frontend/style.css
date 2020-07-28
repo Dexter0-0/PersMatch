@@ -248,11 +248,65 @@ input[type = text], input[type = password]
 
 #PersonalityInput
 {
-  width: 80%;
+  width: 85%;
   padding: 12px 20px;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+#PersonalityTextInput
+{
+  width: 85%;
+  margin-top: 0%;
+}
+
+#InputLabel
+{
+  margin-top: 5%;
+}
+
+#SendInfoButton
+{
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 14px 20px;
+  width: 85%;
+}
+
+#PhotoUpload
+{
+  margin-left: 7.5%;
+  width: 85%;
+  color: rgb(185, 185, 185);
+  border: 2px solid rgb(185, 185, 185);
+}
+
+@media screen and (max-width: 800px) 
+{
+  #InputLabel
+  {
+    margin-top: 15%;
+  }
+
+  #PersonalityInput
+  {
+    width: 100%;
+  }
+
+  #PersonalityTextInput
+  {
+    width: 100%;
+  }
+
+  #SendInfoButton
+  {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 }
 
 /* 404 page */
@@ -264,6 +318,8 @@ input[type = text], input[type = password]
 
 #fofBack
 {
+  text-align: center;
+  width: 40%;
   margin-top: 10%;
-  margin-left: 35%;
+  margin-left: 30%;
 }
