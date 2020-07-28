@@ -92,6 +92,18 @@ def GetHobbyCompatibility(HobbiesOne, HobbiesTwo):
 def GetPersonalityTypeMatch(PersonalityTypeOne, PersonalityTypeTwo):
     PersonalityScore = 0
 
+    if PersonalityTypeOne == PersonalityTypeTwo:
+        PersonalityScore = PersonalityScore + 1
+
+    OppositePersonality = True
+
+    for i in PersonalityTypeOne:
+        if PersonalityTypeOne[i] == PersonalityTypeTwo[i]:
+            OppositePersonality = False
+
+    if OppositePersonality is True:
+        PersonalityScore = PersonalityScore + 1
+
     # INTJ
     if PersonalityTypeOne == "INTJ":
         if "N" in PersonalityTypeTwo:
@@ -114,11 +126,23 @@ def GetPersonalityTypeMatch(PersonalityTypeOne, PersonalityTypeTwo):
 
     # ENTJ
     if PersonalityTypeOne == "ENTJ":
-        print("LMAO")
+        if "TP" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "I" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if PersonalityTypeTwo == "ISFJ":
+            PersonalityScore = PersonalityScore + 1
 
     # ENTP
     if PersonalityTypeOne == "ENTP":
-        print("LMAO")
+        if "IN" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if PersonalityTypeTwo == "ISFJ" or PersonalityTypeTwo == "ESFJ":
+            PersonalityScore = PersonalityScore + 1
+        if "SP" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "N" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
 
     # INFJ
     if PersonalityTypeOne == "INFJ":
@@ -190,7 +214,7 @@ def main():
     CompatibilityScore = CompatibilityScore + GetMusicCompatibility(SpotifyUserOne, SpotifyUserTwo)
     CompatibilityScore = CompatibilityScore + GetMovieCompatibility(MoviesUserOne, MoviesUserTwo)
     CompatibilityScore = CompatibilityScore + GetHobbyCompatibility(HobbiesUserOne, HobbiesUserTwo)
-    CompatibilityScore = CompatibilityScore + GetPersonalityTypeMatch(PersonalityTypeUserOne, PersonalityTypeUserTwo)
+    CompatibilityScore = CompatibilityScore + max(GetPersonalityTypeMatch(PersonalityTypeUserOne, PersonalityTypeUserTwo) + GetPersonalityTypeMatch(PersonalityTypeUserTwo, PersonalityTypeUserOne))
 
     print(CompatibilityScore)
 
