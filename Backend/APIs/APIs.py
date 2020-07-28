@@ -146,24 +146,44 @@ def GetPersonalityTypeMatch(PersonalityTypeOne, PersonalityTypeTwo):
 
     # INFJ
     if PersonalityTypeOne == "INFJ":
-        print("LMAO")
+        if PersonalityTypeTwo == "ENTP" or PersonalityTypeTwo == "ENFP":
+            PersonalityScore = PersonalityScore + 1
+        if "ESF" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "N" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
 
     # INFP
     if PersonalityTypeOne == "INFP":
-        print("LMAO")
+        if PersonalityTypeTwo == "ENFJ" or PersonalityTypeTwo == "ESFJ":
+            PersonalityScore = PersonalityScore + 1
+        if PersonalityTypeTwo == "ENTJ":
+            PersonalityScore = PersonalityScore + 1
+        if PersonalityTypeTwo == "INFJ" or PersonalityTypeTwo == "ISFP":
+            PersonalityScore = PersonalityScore + 1
 
     # ENFJ
     if PersonalityTypeOne == "ENFJ":
-        print("LMAO")
+        if "INF" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "NFP" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
 
     # ENFP
     if PersonalityTypeOne == "ENFP":
-        print("LMAO")
+        if PersonalityTypeOne == "INTJ" or PersonalityTypeTwo == "INFJ":
+            PersonalityScore = PersonalityScore + 1
+        if "S" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "NJ" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
 
     # ISTJ
     if PersonalityTypeOne == "ISTJ":
-        print("LMAO")
-
+        if PersonalityTypeTwo == "ESFP" or PersonalityTypeTwo == "ESTP":
+            PersonalityScore = PersonalityScore + 1
+            
+    
     # ISFJ
     if PersonalityTypeOne == "ISFJ":
         print("LMAO")
