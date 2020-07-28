@@ -77,14 +77,61 @@ def GetMovieCompatibility(MoviesUserOne, MoviesUserTwo):
 
 ###############################################################
 
+def GetHobbyCompatibility(HobbiesOne, HobbiesTwo):
+    HobbyScore = 0
+
+    for i in range(len(HobbiesOne)):
+        for j in range(len(HobbiesTwo)):
+            if HobbiesOne[i].lower() == HobbiesTwo[j].lower():
+                HobbyScore = HobbyScore + 1.5
+
+    return HobbyScore
+
+###############################################################
+
+def GetPersonalityTypeMatch(PersonalityTypeOne, PersonalityTypeTwo):
+    PersonalityScore = 0
+
+    # INTJ
+    if PersonalityTypeOne == "INTJ":
+        if "N" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "E" in PersonalityTypeTwo or PersonalityTypeTwo == "INTP":
+            PersonalityScore = PersonalityScore + 1
+        if "P" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+
+    # INTP
+    if PersonalityTypeOne == "INTP":
+        if "NT" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "E" in PersonalityTypeTwo or PersonalityTypeTwo == "INTJ" or PersonalityTypeTwo == "INFP":
+            PersonalityScore = PersonalityScore + 1
+        if "FP" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+        if "IN" in PersonalityTypeTwo:
+            PersonalityScore = PersonalityScore + 1
+
+
+
+    return PersonalityScore
+
+###############################################################
+
 def main():
-    print(GetMusicCompatibility(GetUserToken("Dexter", ""), GetUserToken("Tudor", "")))
+    SpotifyUserOne = GetUserToken("Dexter", "")
+    SpotifyUserTwo = GetUserToken("Tudor", "")
 
     MoviesUserOne = ["titanic", "the wizard of oz", "the lion king"]
     MoviesUserTwo = ["jurassic park", "fight club", "pulp fiction"]
 
-    print(GetMovieCompatibility(MoviesUserOne, MoviesUserTwo))
+    HobbiesUserOne = ["Fotbal", "Programare", "cantat"]
+    HobbiesUserTwo = ["Baschet", "Cantat", "Programare"]
 
+    print(GetMusicCompatibility(SpotifyUserOne, SpotifyUserTwo))
+    print(GetMovieCompatibility(MoviesUserOne, MoviesUserTwo))
+    print(GetHobbyCompatibility(HobbiesUserOne, HobbiesUserTwo))
+    
 
 if __name__ == '__main__':
     main()
