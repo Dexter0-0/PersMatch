@@ -86,5 +86,45 @@
         <img id = "NavigationBarIcon" src = "Images/Icon.png" height= "75" width = "75">
     </div>
 
+    <!-- Form -->
+    <div class = "container PersonalityForm">
+        <form action = "/action_page.php" method = "post">
+            <div class = "row">
+                <h3>Care este tipul tau de personalitate? (vezi: <a target="_blank" rel="noopener noreferrer" href = "https://www.16personalities.com/ro/test-de-personalitate-gratuit">cele 16 personalitati</a>)</h3>
+            </div>
+
+            <div class = "row">
+                <select id = "PersonalityInput" name = "Personality">
+                    <option value = "INTJ">INTJ</option>
+                    <option value = "INTP">INTP</option>
+                    <option value = "ENTJ">ENTJ</option>
+                    <option value = "ENTP">ENTP</option>
+                    <option value = "INFJ">INTJ</option>
+                    <option value = "INFP">INTP</option>
+                    <option value = "ENFJ">ENTJ</option>
+                    <option value = "ENFP">ENTP</option>
+                    <option value = "ISTJ">INTJ</option>
+                    <option value = "ISFJ">INTP</option>
+                    <option value = "ESTJ">ENTJ</option>
+                    <option value = "ESFJ">ENTP</option>
+                    <option value = "ISTP">INTJ</option>
+                    <option value = "ISFP">INTP</option>
+                    <option value = "ESTP">ENTJ</option>
+                    <option value = "ESFP">ENTP</option>
+                </select>
+
+            </div>
+            
+            
+            <div class = "row">
+                <input type = "text" placeholder = "Ce tip de personalitate ai?" name = "Username" required>
+
+                <input type = "password" placeholder = "Introdu Parola" name = "Password" required>
+            
+                <button type = "submit" id = "LoginButton">Trimite informatile</button>
+            </div>
+        </form>
+    </div>
+
 
 </html>
