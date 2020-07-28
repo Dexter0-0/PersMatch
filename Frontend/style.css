@@ -323,3 +323,88 @@ input[type = text], input[type = password]
   margin-top: 10%;
   margin-left: 30%;
 }
+
+/* Home Page Card */
+
+.ProfileCard 
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  margin-top: 9%;
+  padding-bottom: 1%;
+}
+
+@media screen and (max-width: 1100px) 
+{
+  .ProfileCard
+  {
+    margin-top: 12.5%;
+  }
+}
+
+@media screen and (max-width: 900px) 
+{
+  .ProfileCard
+  {
+    margin-top: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) 
+{
+  .ProfileCard
+  {
+    margin-top: 22.5%;
+  }
+}
+
+.ProfileTitle 
+{
+  color: rgb(185, 185, 185);
+  font-size: 18px;
+}
+
+.ProfileButton
+{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.ProfileInstagramLink
+{
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.ProfileButton:hover, .ProfileImage:hover
+{
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+#MatchingButton
+{
+  text-align: center;
+  width: 30%;
+  margin-top: 2.5%;
+  margin-left: 35%;
+}
+
+@media screen and (max-width: 800px) 
+{
+  #MatchingButton
+  {
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+  }
+}
