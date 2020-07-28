@@ -31,6 +31,45 @@ button:hover
   transform: scale(1.05);
 }
 
+.ButtonLink
+{
+	background-color: #304050;
+  border-radius: 50px;
+	border: 2px solid #007CED;
+	display: inline-block;
+	cursor: pointer;
+	color: #dadada;
+  padding: 10px 60px;
+  text-decoration: none;
+  transition: transform 0.2s;
+  margin-left: 10%;
+}
+
+.ButtonLink:hover 
+{
+  background-color: #007CED;
+  color: #dadada;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 800px) 
+{
+  .ButtonLink
+  {
+    padding: 10px 30px;
+  }
+}
+
+@media only screen and (max-width: 634px)
+{
+  .ButtonLink
+  {
+    margin-left: 0;
+    margin-top: 10%;
+  }
+} 
+
 /* Login form */
 
 .LoginCard
