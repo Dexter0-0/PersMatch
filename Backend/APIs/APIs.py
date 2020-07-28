@@ -112,13 +112,15 @@ def GetPersonalityTypeMatch(PersonalityTypeOne, PersonalityTypeTwo):
         if "IN" in PersonalityTypeTwo:
             PersonalityScore = PersonalityScore + 1
 
-
+    
 
     return PersonalityScore
 
 ###############################################################
 
 def main():
+    CompatibilityScore = 0
+
     SpotifyUserOne = GetUserToken("Dexter", "")
     SpotifyUserTwo = GetUserToken("Tudor", "")
 
@@ -128,10 +130,16 @@ def main():
     HobbiesUserOne = ["Fotbal", "Programare", "cantat"]
     HobbiesUserTwo = ["Baschet", "Cantat", "Programare"]
 
-    print(GetMusicCompatibility(SpotifyUserOne, SpotifyUserTwo))
-    print(GetMovieCompatibility(MoviesUserOne, MoviesUserTwo))
-    print(GetHobbyCompatibility(HobbiesUserOne, HobbiesUserTwo))
-    
+    PersonalityTypeUserOne = "INTP"
+    PersonalityTypeUserTwo = "INFP"
+
+    CompatibilityScore = CompatibilityScore + GetMusicCompatibility(SpotifyUserOne, SpotifyUserTwo)
+    CompatibilityScore = CompatibilityScore + GetMovieCompatibility(MoviesUserOne, MoviesUserTwo)
+    CompatibilityScore = CompatibilityScore + GetHobbyCompatibility(HobbiesUserOne, HobbiesUserTwo)
+    CompatibilityScore = CompatibilityScore + GetPersonalityTypeMatch(PersonalityTypeUserOne, PersonalityTypeUserTwo)
+
+    print(CompatibilityScore)
+
 
 if __name__ == '__main__':
     main()
