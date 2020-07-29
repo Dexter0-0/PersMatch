@@ -16,37 +16,37 @@
  <!DOCTYPE html>
 
  <html>
-     <!-- Meta tags -->
-     <meta charset = "utf-8">
-     <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
-     <meta name = "language" content = "RO">
-     <meta name = "Classification" content = "Business">
-     <meta name = "description" content = "PersMatch">
-     <meta name = "keywords" content = "PersMatch">
-     <meta name = "author" content = "Nandra Rares,Gruian Tudor">
-     <meta http-equiv = "Expires" content = "0">
-     <meta http-equiv = "Cache-Control" content = "cache">
+    <!-- Meta tags -->
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+    <meta name = "language" content = "RO">
+    <meta name = "Classification" content = "Business">
+    <meta name = "description" content = "PersMatch">
+    <meta name = "keywords" content = "PersMatch">
+    <meta name = "author" content = "Nandra Rares,Gruian Tudor">
+    <meta http-equiv = "Expires" content = "0">
+    <meta http-equiv = "Cache-Control" content = "cache">
      
-     <!-- Title and Icon -->
-     <title>PersMatch - HomePage</title>
-     <link rel = "icon" type = "image/png" href = "Images/Icon.png">
+    <!-- Title and Icon -->
+    <title>PersMatch - HomePage</title>
+    <link rel = "icon" type = "image/png" href = "Images/Icon.png">
      
-     <!-- Include Bootsrap -->
-     <link rel = "stylesheet" href = "ThirdParty/Bootstrap/BootstrapCSSMin.css">
-     <script src = "ThirdParty/Bootstrap/BootstrapJQueryMin.js"></script>
-     <script src = "ThirdParty/Bootstrap/BootstrapJSMin.js"></script>
+    <!-- Include Bootsrap -->
+    <link rel = "stylesheet" href = "ThirdParty/Bootstrap/BootstrapCSSMin.css">
+    <script src = "ThirdParty/Bootstrap/BootstrapJQueryMin.js"></script>
+    <script src = "ThirdParty/Bootstrap/BootstrapJSMin.js"></script>
  
-     <!-- Include Icons -->
-     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Include Icons -->
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-     <!-- Include JQuery -->
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity = "sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Include JQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity = "sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
  
-     <!-- Include CSS -->
-     <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <!-- Include CSS -->
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
  
-     <!-- Include Script -->
-     <script src = "script.js"></script>
+    <!-- Include Script -->
+    <script src = "script.js"></script>
 
     <!-- Top navigation bar -->
     <div class = "TopNavigationBar">
@@ -56,12 +56,15 @@
     <!-- Profile Card -->
     <div class = "container ProfileCard">
         <img class = "ProfileImage" src = "Images/Icon.png" style = "width:100%;">
-        <h1>Username</h1>
-        <p class = "ProfileTitle">Varsta: 21</p>
-        <a class = "ProfileInstagramLink" href = "#LinkInstagram">Instagram</a>
+        <h1 id = "Username"></h1>
+        <p class = "ProfileTitle" id = "Age"></p>
+        <a class = "ProfileInstagramLink" id = "Instagram" href = "#LinkInstagram"></a>
     </div>
 
     <!-- Match / Matching Button -->
     <div class = "container">
         <a href = "Chat.html" class = "ButtonLink" id = "MatchingButton">Match / Matching</a>
     </div>
+
+    
+    <script src = "HomePageScripts.js"></script>
